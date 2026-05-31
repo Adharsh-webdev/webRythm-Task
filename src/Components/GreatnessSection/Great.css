@@ -1,0 +1,158 @@
+/* ==========================================================================
+   Greatness In Any Space Grid Styles (Dark Theme - CSS Grid)
+   ========================================================================== */
+.tw-spaces-section {
+  background-color: #000000;
+  padding: 100px 24px;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+
+.tw-spaces-container {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+}
+
+/* Header Text */
+.tw-spaces-header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.tw-spaces-main-title {
+  font-family: "Samsung Sharp Sans", sans-serif;
+
+  font-size: 30px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.tw-spaces-sub-desc {
+  font-family: "SamsungOne", sans-serif;
+  font-size: 14px;
+  color: #a3a3a3;
+  margin: 0;
+}
+
+/* --- THE 3-COLUMN / 3-ROW GRID [1] --- */
+.tw-spaces-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 equal columns on desktop [1] */
+  grid-template-rows: repeat(3, 200px); /* 3 rows of fixed height [1] */
+  gap: 12px; /* Thin black grid divider lines matching Figma reference [1] */
+  width: 100%;
+}
+
+/* Base item config */
+.tw-spaces-item {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #111111;
+}
+
+.tw-spaces-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.tw-spaces-item:hover .tw-spaces-img {
+  transform: scale(1.02); /* Soft hover effect */
+}
+
+/* --- DETAILED COORDINATES [1] --- */
+
+/* Left-column vertical layouts */
+.tw-spaces-wood-forest {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+.tw-spaces-concrete-tunnel {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+}
+
+.tw-spaces-white-forest {
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+}
+
+/* Giant Featured image spanning Column 2 to 3 and Row 1 to 2 [1] */
+.tw-spaces-joshua-patio {
+  grid-column: 2 / 4; /* Spans across Col 2 and Col 3 [1] */
+  grid-row: 1 / 3; /* Spans across Row 1 and Row 2 [1] */
+}
+
+/* Bottom row layouts */
+.tw-spaces-ice-cave-sofa {
+  grid-column: 2 / 3;
+  grid-row: 3 / 4;
+}
+
+.tw-spaces-grand-canyon {
+  grid-column: 3 / 4;
+  grid-row: 3 / 4;
+}
+
+/* ==========================================================================
+   RESPONSIVE MEDIA QUERIES (GRID RE-ALIGNMENT) [1]
+   ========================================================================== */
+
+/* Tablet scale grid adjustments */
+@media (max-width: 991px) and (min-width: 768px) {
+  .tw-spaces-main-title {
+    font-size: 32px;
+  }
+  .tw-spaces-grid {
+    grid-template-rows: repeat(
+      3,
+      150px
+    ); /* Shrinks heights slightly for smaller tablet viewports */
+  }
+}
+
+/* Mobile scale (Stacks vertically to prevent squishing) [1] */
+@media (max-width: 767px) {
+  .tw-spaces-section {
+    padding: 60px 16px;
+  }
+  .tw-spaces-container {
+    gap: 36px;
+  }
+  .tw-spaces-main-title {
+    font-size: 28px;
+  }
+  .tw-spaces-sub-desc {
+    font-size: 12px;
+    max-width: 90%;
+  }
+
+  /* Reset grid system to single-column static stack [1] */
+  .tw-spaces-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 16px;
+  }
+
+  /* Removes row and column spans on mobile devices [1] */
+  .tw-spaces-item {
+    grid-column: auto !important;
+    grid-row: auto !important;
+    aspect-ratio: 16 / 10; /* Maintains beautiful aspect ratio on phones */
+    border-radius: 6px;
+  }
+}

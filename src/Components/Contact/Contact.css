@@ -1,0 +1,208 @@
+/* ==========================================================================
+   Contact Form Section Styles (Dark Theme - CSS Grid Layout)
+   ========================================================================== */
+.tw-contact-section {
+  background-color: #000000;
+  padding: 100px 24px;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tw-contact-container {
+  width: 100%;
+  max-width: 1100px;
+  display: grid;
+  grid-template-columns: 1fr; /* Stacks vertically by default on mobile */
+  gap: 64px;
+  align-items: center; /* Vertically centers both columns on desktop */
+}
+
+/* --- LEFT COLUMN: INFO AREA --- */
+.tw-contact-info-col {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  max-width: 500px;
+}
+
+.tw-contact-main-title {
+  font-family: "Samsung Sharp Sans", sans-serif;
+
+  font-size: 30px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.tw-contact-sub-desc {
+  font-family: "SamsungOne", sans-serif;
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: #a3a3a3;
+  margin: 0;
+}
+
+/* Contact detail rows */
+.tw-contact-details-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.tw-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-family: "SamsungOne", sans-serif;
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.tw-contact-icon {
+  width: 18px;
+  height: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+/* --- RIGHT COLUMN: CONTACT CARD --- */
+.tw-contact-form-card {
+  background: linear-gradient(
+    213.39deg,
+    rgba(255, 255, 255, 0.1) 37.23%,
+    rgba(8, 8, 8, 0.1) 99.37%
+  );
+
+  padding: 40px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.12); /* Subtle frame stroke border */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 500px;
+  justify-self: center; /* Centers card on mobile viewports */
+  backdrop-filter: blur(4px);
+}
+
+.tw-contact-card-title {
+  font-family: "Samsung Sharp Sans", sans-serif;
+  font-size: 26px;
+  font-weight: 500;
+  color: #fefefe;
+  margin: 0 0 28px 0;
+  text-align: left;
+}
+
+.tw-contact-form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Form fields inputs (Solid white background) */
+.tw-contact-input {
+  width: 100%;
+  background-color: #ffffff;
+  border: none;
+  outline: none;
+  color: #000000;
+  font-family: "SamsungOne", sans-serif;
+  font-size: 14px;
+  padding: 12px 16px;
+  border-radius: 6px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+.tw-contact-input::placeholder {
+  color: #888888;
+}
+
+/* Specific text-area height config */
+.tw-contact-textarea {
+  height: 140px;
+  margin-bottom: 24px;
+}
+
+.tw-contact-input-error {
+  border: 1.5px solid #ef4444; /* Highlights error states */
+}
+
+.tw-contact-error-text {
+  color: #ef4444;
+  font-size: 0.75rem;
+  margin-top: -16px;
+  margin-bottom: 16px;
+  margin-left: 4px;
+}
+
+/* Form Submit Button */
+.tw-contact-submit-btn {
+  width: 100%;
+  background-color: #f3f3f3;
+  color: #111111;
+  border: none;
+  outline: none;
+  padding: 12px 0;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.tw-contact-submit-btn:hover {
+  background-color: #e5e5e5;
+}
+
+/* ==========================================================================
+   RESPONSIVE MEDIA QUERIES (GRID CONTROLS)
+   ========================================================================== */
+
+/* 1. Desktop viewports (2 columns) */
+@media (min-width: 768px) {
+  .tw-contact-container {
+    grid-template-columns: repeat(2, 1fr); /* Split side-by-side */
+  }
+}
+
+/* 2. Tablet Portrait Scale Adjustments */
+@media (max-width: 991px) and (min-width: 768px) {
+  .tw-contact-main-title {
+    font-size: 32px;
+  }
+  .tw-contact-sub-desc {
+    font-size: 13px;
+  }
+}
+
+/* 3. Mobile Scale Adjustments */
+@media (max-width: 767px) {
+  .tw-contact-section {
+    padding: 60px 16px;
+  }
+  .tw-contact-container {
+    gap: 48px;
+  }
+  .tw-contact-info-col {
+    max-width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+  .tw-contact-main-title {
+    font-size: 28px;
+  }
+  .tw-contact-sub-desc {
+    font-size: 12px;
+    max-width: 90%;
+  }
+  .tw-contact-details-list {
+    align-items: flex-start;
+  }
+  .tw-contact-form-card {
+    padding: 32px 24px;
+  }
+}

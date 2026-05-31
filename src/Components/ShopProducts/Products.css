@@ -1,0 +1,165 @@
+/* ==========================================================================
+   Shop Products Section Styles (Light Theme - CSS Grid)
+   ========================================================================== */
+.tw-shop-section {
+  background-color: #f7f7f8; /* Light gray background matching reference screenshot */
+  padding: 100px 24px;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  border-bottom: 2px solid black;
+}
+
+.tw-shop-container {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 64px;
+}
+
+.tw-shop-main-title {
+  font-family: "Samsung Sharp Sans", sans-serif;
+  font-size: 42px;
+  font-weight: 700;
+  color: #1e293b; /* Dark slate gray title color */
+  text-align: center;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+/* --- THE 3-COLUMN PRODUCT GRID [1.1] --- */
+.tw-shop-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* 1 Column stack on mobile screens [1.1] */
+  gap: 64px 0;
+  width: 100%;
+}
+
+/* --- THE PRODUCT CARD CONTAINER --- */
+.tw-shop-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  padding: 0 24px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/* Image frame scaling */
+.tw-shop-media {
+  width: 100%;
+  max-width: 280px;
+  aspect-ratio: 16 / 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.tw-shop-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Card Content Group */
+.tw-shop-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+
+.tw-shop-title {
+  font-family: "Samsung Sharp Sans", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #0c0c0c;
+  line-height: 1.45;
+  margin: 0;
+  max-width: 250px;
+}
+
+/* Precise Rectangle "Buy Now" Button styling */
+.tw-shop-buy-btn {
+  font-family: "SamsungOne", sans-serif;
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid #000000; /* Thin, sharp solid border [1.1] */
+  padding: 8px 36px;
+  font-size: 13px;
+  font-weight: 700;
+  border-radius: 2px; /* Very subtle curves matching the rectangular shape */
+  cursor: pointer;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
+
+.tw-shop-buy-btn:hover {
+  background-color: #000000; /* Inverted fill on hover */
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   RESPONSIVE MEDIA QUERIES (GRID SYSTEM CONTROLS) [1.1]
+   ========================================================================== */
+
+/* 1. Desktop Scales (3 Columns + Vertical Divider Lines) */
+@media (min-width: 992px) {
+  .tw-shop-grid {
+    grid-template-columns: repeat(3, 1fr); /* Exact 3-column layout [1.1] */
+  }
+
+  /* Automatically draws divider lines between columns 1-2 and 2-3 [1.1] */
+  .tw-shop-grid .tw-shop-card:nth-child(3n-2),
+  .tw-shop-grid .tw-shop-card:nth-child(3n-1) {
+    border-right: 1px solid rgba(0, 0, 0, 0.08);
+  }
+}
+
+/* 2. Tablet Portrait Scale (2 Columns) */
+@media (max-width: 991px) and (min-width: 580px) {
+  .tw-shop-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Draws a single center divider on 2-column configurations */
+  .tw-shop-grid .tw-shop-card:nth-child(2n-1) {
+    border-right: 1px solid rgba(0, 0, 0, 0.08);
+  }
+}
+
+/* 3. Mobile Scale (1 Column Stack) */
+@media (max-width: 579px) {
+  .tw-shop-section {
+    padding: 60px 16px;
+  }
+  .tw-shop-container {
+    gap: 48px;
+  }
+  .tw-shop-main-title {
+    font-size: 32px;
+  }
+  .tw-shop-grid {
+    gap: 48px;
+  }
+  .tw-shop-card {
+    padding: 0;
+  }
+  .tw-shop-media {
+    max-width: 220px;
+    margin-bottom: 16px;
+  }
+  .tw-shop-title {
+    font-size: 14px;
+  }
+}

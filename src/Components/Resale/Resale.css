@@ -1,0 +1,173 @@
+/* ==========================================================================
+   For Resale Section Styles (Dark Theme - CSS Grid)
+   ========================================================================== */
+.tw-resale-section {
+  background: linear-gradient(180deg, #000000 28.5%, #272727 100%);
+
+  padding: 100px 24px;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+
+.tw-resale-container {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+}
+
+.tw-resale-main-title {
+  font-family: "Samsung Sharp Sans", sans-serif;
+
+  font-size: 30px;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: center;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+/* --- PERSPECTIVE SCREENS IMAGE --- */
+.tw-resale-media-wrapper {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  justify-content: center;
+}
+
+.tw-resale-panels-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* --- BENEFITS & CHECKLIST BOX --- */
+.tw-resale-benefits-box {
+  width: 100%;
+  max-width: 800px; /* Centered block width */
+  margin: 12px auto 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.tw-resale-benefits-title {
+  font-family: "Samsung Sharp Sans", sans-serif;
+
+  font-size: 21px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 24px 0;
+  text-align: left; /* Left aligned above the checklist */
+}
+
+/* --- THE 2-COLUMN CHECKLIST GRID --- */
+.tw-resale-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* 1 Column default stack on mobile scale */
+  gap: 18px 48px;
+  width: 100%;
+}
+
+.tw-resale-item {
+  display: flex;
+  align-items: flex-start; /* Keeps bullet aligned with the first line on wraps */
+  gap: 12px;
+  font-family: "SamsungOne", sans-serif;
+  font-size: 13.5px;
+  color: #cccccc;
+  line-height: 1.5;
+}
+
+.tw-resale-bullet {
+  width: 10px;
+  height: auto;
+  margin-top: 4px; /* Perfectly centers bullet with the text line-height */
+  flex-shrink: 0;
+}
+
+/* --- CENTERED OUTLINE BUTTON --- */
+.tw-resale-btn-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+.tw-resale-cta-btn {
+  display: inline-block;
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.6); /* Translucent white border */
+  padding: 10px 36px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.tw-resale-cta-btn:hover {
+  background-color: #ffffff;
+  color: #000000;
+  border-color: #ffffff;
+}
+
+/* ==========================================================================
+   RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
+
+/* 1. Desktop & Large Tablet Scale (2 Columns side-by-side) */
+@media (min-width: 768px) {
+  .tw-resale-grid {
+    grid-template-columns: 1fr 1fr; /* Alternating grid splits */
+  }
+}
+
+/* 2. Tablet Portrait Scale Adjustments */
+@media (max-width: 991px) and (min-width: 768px) {
+  .tw-resale-main-title {
+    font-size: 32px;
+  }
+  .tw-resale-benefits-title {
+    font-size: 20px;
+  }
+  .tw-resale-item {
+    font-size: 12.5px;
+  }
+}
+
+/* 3. Mobile Scale Adjustments */
+@media (max-width: 767px) {
+  .tw-resale-section {
+    padding: 60px 16px;
+  }
+  .tw-resale-container {
+    gap: 36px;
+  }
+  .tw-resale-main-title {
+    font-size: 28px;
+  }
+  .tw-resale-benefits-box {
+    padding: 0 8px;
+  }
+  .tw-resale-benefits-title {
+    font-size: 20px;
+    text-align: center; /* Centered benefits heading on mobile screen */
+  }
+  .tw-resale-grid {
+    gap: 16px;
+  }
+  .tw-resale-item {
+    font-size: 12px;
+  }
+  .tw-resale-cta-btn {
+    padding: 10px 32px;
+    font-size: 12px;
+  }
+}

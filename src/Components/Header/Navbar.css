@@ -1,0 +1,193 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.cdnfonts.com/css/samsungone");
+
+.montserrat {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* --- NAVIGATION CONTAINER --- */
+.tw-navbar {
+  position: fixed;
+  top: 15px;
+  left: 0;
+  right: 0;
+  height: 54px;
+  background: #f5f5f5;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.tw-navbar-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.tw-navbar-logo {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  color: #0c0c0c;
+}
+
+/* --- RESPONSIVE TOGGLE MENU (HAMBURGER) --- */
+.tw-navbar-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 20px;
+  height: 14px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 110;
+}
+
+.tw-navbar-toggle span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #000000;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+/* Morph hamburger lines into an 'X' when open */
+.tw-navbar.is-open .tw-navbar-toggle span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.tw-navbar.is-open .tw-navbar-toggle span:nth-child(2) {
+  opacity: 0;
+}
+
+.tw-navbar.is-open .tw-navbar-toggle span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* --- LINKS NAVIGATION --- */
+.tw-navbar-links {
+  display: none; /* Hidden by default on mobile */
+  font-family: "SamsungOne", sans-serif;
+  gap: 32px;
+  font-size: 12px;
+  font-weight: 400;
+  color: #000000;
+}
+
+.tw-navbar-link {
+  position: relative;
+  text-decoration: none;
+  color: #000000;
+  padding: 4px 0;
+}
+
+/* Underline slide effect on hover */
+.tw-navbar-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background-color: #000000;
+  transition: width 0.3s ease;
+}
+
+.tw-navbar-link:hover::after {
+  width: 100%;
+}
+
+/* --- CTA ACTION BUTTON --- */
+.tw-navbar-cta {
+  background: #000000;
+  color: #ffffff;
+  padding: 7px 24px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  transition:
+    background-color 0.2s ease-in-out,
+    color 0.2s ease-in-out;
+  text-decoration: none;
+  text-align: center;
+}
+
+.tw-navbar-cta:hover {
+  background-color: #e5e5e5;
+  color: #000000;
+}
+
+/* --- RESPONSIVE TOGGLE RULES --- */
+.tw-mobile-only {
+  display: none !important;
+}
+
+.tw-desktop-only {
+  display: block;
+}
+
+/* --- MOBILE SPECIFIC LAYOUT ADJUSTMENTS (< 768px) --- */
+@media (max-width: 767px) {
+  .tw-mobile-only {
+    display: block !important;
+  }
+
+  .tw-desktop-only {
+    display: none !important;
+  }
+
+  .tw-navbar-links {
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 39px;
+    left: 0;
+    right: 0;
+    background: #f5f5f5;
+    padding: 32px 24px;
+    gap: 24px;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  }
+
+  /* When navbar is toggled open, display vertical lists */
+  .tw-navbar.is-open .tw-navbar-links {
+    display: flex;
+  }
+
+  /* Move the Action CTA inside the vertical list on mobile for better alignment */
+  .tw-navbar-links .tw-navbar-cta {
+    width: 100%;
+    max-width: 200px;
+    margin-top: 8px;
+  }
+}
+
+/* --- DESKTOP LAYOUT (>= 768px) --- */
+@media (min-width: 768px) {
+  .tw-navbar-toggle {
+    display: none;
+  }
+
+  .tw-navbar-links {
+    display: flex;
+  }
+}

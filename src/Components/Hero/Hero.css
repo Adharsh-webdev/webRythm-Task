@@ -1,0 +1,405 @@
+/* ==========================================
+   Hero Section Base Styles
+   ========================================== */
+.tw-hero {
+  position: relative;
+  width: 100%;
+  /* Fills the screen height; adjusts if you have a header */
+  height: 100vh;
+  min-height: 800px; /* Prevents compression on wider desktop screens */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  color: #ffffff;
+}
+
+/* ==========================================
+   Image Container & Overlay Layer
+   ========================================== */
+.tw-hero-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Sits behind the text content */
+}
+
+.tw-hero-img img {
+  width: 100%;
+  height: 100%;
+}
+
+/* Dark bottom gradient overlay to make text highly readable */
+.tw-hero-img::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 30%,
+    rgba(0, 0, 0, 0.15) 60%,
+    rgba(0, 0, 0, 0.45) 80%,
+    rgba(0, 0, 0, 0.85) 100%
+  );
+  z-index: 2; /* Sits on top of image, but below the text */
+}
+
+/* ==========================================
+   Content Layout Layer
+   ========================================== */
+.tw-hero-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Spares the top header from the bottom text */
+  align-items: center;
+  text-align: center;
+  padding: 48px 20px 40px 20px;
+  box-sizing: border-box;
+  z-index: 3; /* Sits on top of the gradient overlay */
+  color: linear-gradient(
+    270deg,
+    #e1dfea 0%,
+    #ffffff 10.8%,
+    #ffffff 34.3%,
+    #e1dfea 46.3%,
+    #ffffff 60.3%,
+    #ffffff 89.8%,
+    #e1dfea 100%
+  );
+}
+
+/* ==========================================
+   Top Group (Title & Sizes)
+   ========================================== */
+.tw-hero-top-group {
+  margin-top: 20px;
+}
+
+.tw-hero-title {
+  font-family: "Samsung Sharp Sans", sans-serif;
+  font-size: 46px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.92);
+  letter-spacing: -2px;
+  margin: 0;
+  text-align: center;
+}
+
+.tw-hero-title .light-text {
+  font-weight: 700;
+  background: linear-gradient(
+    270deg,
+    #e1dfea 0%,
+    #ffffff 10.8%,
+    #ffffff 34.3%,
+    #e1dfea 46.3%,
+    #ffffff 60.3%,
+    #ffffff 89.8%,
+    #e1dfea 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.sizes {
+  font-family: "Samsung Sharp Sans", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #ffffff;
+}
+
+.sizes .separator {
+  color: #ffffff;
+  font-weight: 200;
+}
+
+/* ==========================================
+   Bottom Group (Price, Button & Footer)
+   ========================================== */
+.tw-hero-bottom-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 90px;
+}
+
+.tw-hero-price-label {
+  font-size: 1.8rem;
+  font-weight: 300;
+  margin: 0;
+}
+
+.tw-hero-price-val {
+  font-family: "Samsung Sharp Sans", sans-serif;
+  font-weight: 700;
+  margin-left: 5px;
+}
+
+/* CTA Outline Button */
+.tw-hero-buy-btn {
+  font-family: "Samsung Sharp Sans", sans-serif;
+  background: transparent;
+  color: #ffffff;
+  border: 1.5px solid rgba(255, 255, 255, 0.85);
+  padding: 12px 55px;
+  font-size: 1.1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.tw-hero-buy-btn:hover {
+  background-color: #ffffff;
+  color: #000000;
+  border-color: #ffffff;
+}
+
+/* Footer text */
+.tw-hero-footer-text {
+  font-family: "Samsung Sharp Sans", sans-serif;
+
+  font-size: 14px;
+  color: #ffffff;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-top: auto; /* Pushes it to the bottom of the flex layout */
+  padding-top: 40px;
+  z-index: 10;
+}
+/* ==========================================
+   Social Sidebar (Floats Left)
+   ========================================== */
+.social-bar {
+  position: absolute;
+  left: 30px;
+  top: 40%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  z-index: 3;
+}
+
+.social-bar .line {
+  width: 1px;
+  height: 60px;
+  background-color: #ffffff;
+}
+.social-bar img {
+  width: 18px;
+  height: auto;
+  opacity: 0.85;
+  transition: opacity 0.3s ease;
+}
+
+.social-bar img:hover {
+  opacity: 1;
+}
+
+/* ==========================================
+   Responsive Adaptations
+   ========================================== */
+@media (max-width: 768px) {
+  .tw-hero {
+    height: auto;
+    min-height: auto;
+    padding: 80px 20px;
+  }
+
+  .tw-hero-content {
+    justify-content: center;
+    gap: 60px;
+  }
+
+  .tw-hero-title {
+    font-size: 2.4rem;
+  }
+
+  .sizes {
+    font-size: 1.1rem;
+  }
+
+  .tw-hero-price-label {
+    font-size: 1.4rem;
+  }
+
+  .tw-hero-footer-text {
+    font-size: 1.1rem;
+  }
+
+  .social-bar {
+    display: none; /* Avoid overlap on tight viewports */
+  }
+}
+.tw-features {
+  position: relative;
+  color: #ffffff;
+  z-index: 10;
+  width: 90%;
+  padding: 20px;
+  max-width: 1200px;
+  text-align: center;
+  margin: -100px auto 0; /* Reduced negative margin on mobile for spacing balance */
+  box-sizing: border-box;
+}
+.tw-features-title {
+  font-family: "Samsung Sharp Sans", sans-serif;
+  font-size: 30px;
+  padding: 10px;
+}
+
+/* --- GRID WRAPPER --- */
+.sm-cards-grid {
+  position: relative; /* Fixed from absolute to keep cards in natural document flow */
+  display: grid;
+  grid-template-columns: 1fr; /* 1 Column default stack on mobile viewports */
+  gap: 16px; /* Slightly tighter gap on mobile screens */
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* --- THE CARD CONTAINER --- */
+.sm-feature-card {
+  position: relative;
+  aspect-ratio: 1 / 1; /* Squarer proportions for vertical cards on mobile */
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition:
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+/* Accent highlight on hover */
+.sm-feature-card:hover {
+  border-color: #ffffff;
+}
+
+.sm-card-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* --- FROSTED GLASS OVERLAY --- */
+.sm-card-glass-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 44%; /* Elevated height on mobile to prevent text overflows */
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 12px 16px; /* Tighter padding on small devices */
+  box-sizing: border-box;
+}
+
+/* --- TYPOGRAPHY --- */
+.sm-card-title {
+  font-family: "Samsung Sharp Sans", sans-serif;
+  color: #ffffff;
+  font-size: 18px; /* Slightly scaled down on mobile */
+  font-weight: 600;
+  margin: 0 0 6px 0;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.sm-card-desc {
+  font-family: "SamsungOne", sans-serif;
+  color: #cccccc;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.45;
+  margin: 0;
+  max-width: 100%;
+}
+.tw-video {
+  width: 100%;
+  height: 100%;
+}
+.tw-video img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* ==========================================================================
+   RESPONSIVE ADAPTATIONS
+   ========================================================================== */
+
+/* 1. Portrait Tablets & Landscape Mobiles (580px and up) */
+@media (min-width: 580px) {
+  .tw-features {
+    margin-top: -80px; /* Enhanced overlap */
+  }
+
+  .sm-cards-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 Column layout */
+    gap: 20px;
+  }
+
+  .sm-feature-card {
+    aspect-ratio: 1 / 1.1; /* Slightly taller vertical format */
+  }
+
+  .sm-card-glass-overlay {
+    height: 42%;
+    padding: 16px 20px;
+  }
+
+  .sm-card-title {
+    font-size: 19px;
+  }
+}
+
+/* 2. Desktop Screens (1024px and up) */
+@media (min-width: 1024px) {
+  .tw-features {
+    margin-top: -100px; /* Full overlap matching design specs */
+  }
+
+  .sm-cards-grid {
+    grid-template-columns: repeat(4, 1fr); /* 4 Column desktop layout */
+    gap: 20px;
+  }
+
+  .sm-feature-card {
+    aspect-ratio: 1 / 1.15; /* Ideal ratio for grid alignment */
+  }
+
+  .sm-card-glass-overlay {
+    height: 42%;
+    padding: 16px 24px;
+  }
+
+  .sm-card-title {
+    font-size: 20px;
+  }
+}

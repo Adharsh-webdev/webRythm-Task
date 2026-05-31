@@ -1,0 +1,567 @@
+/* =========================
+   Desktop (Default)
+   ========================= */
+
+.tw-blackseal-title {
+  margin-top: 20px;
+  font-family: "Samsung Sharp Sans", sans-serif;
+  color: #ffffff;
+  text-align: center;
+
+  font-size: 42px;
+  font-weight: 700;
+}
+
+.tw-blackseal-desc {
+  font-family: "SamsungOne", sans-serif;
+  color: #ffffff;
+  text-align: center;
+  margin-top: 20px !important;
+  padding: 10px;
+  font-size: 16px;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.tw-blackseal-image-frame {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.tw-blackseal-img {
+  position: relative;
+  width: 70%;
+  height: auto;
+  display: block;
+  z-index: 2;
+}
+
+.tw-blackseal-smoke-img {
+  position: absolute;
+  left: 50%;
+  bottom: -120px;
+  transform: translateX(-50%);
+  width: 100%;
+
+  height: auto;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.8;
+  filter: blur(8px);
+}
+
+/* =========================
+   Laptop (1200px)
+   ========================= */
+
+@media (max-width: 1200px) {
+  .tw-blackseal-img {
+    width: 80%;
+  }
+
+  .tw-blackseal-smoke-img {
+    width: 180%;
+    bottom: -100px;
+  }
+}
+
+/* =========================
+   Tablet (992px)
+   ========================= */
+
+@media (max-width: 992px) {
+  .tw-blackseal-title {
+    font-size: 34px;
+  }
+
+  .tw-blackseal-desc {
+    font-size: 14px;
+    max-width: 90%;
+  }
+
+  .tw-blackseal-img {
+    width: 90%;
+  }
+
+  .tw-blackseal-smoke-img {
+    width: 220%;
+    bottom: -80px;
+    filter: blur(6px);
+  }
+}
+
+/* =========================
+   Mobile (768px)
+   ========================= */
+
+@media (max-width: 768px) {
+  .tw-blackseal-title {
+    font-size: 28px;
+    padding: 0 16px;
+  }
+
+  .tw-blackseal-desc {
+    font-size: 13px;
+    line-height: 1.6;
+    padding: 0 20px;
+  }
+
+  .tw-blackseal-img {
+    width: 90%;
+  }
+
+  .tw-blackseal-smoke-img {
+    width: 100%;
+    bottom: -60px;
+    opacity: 0.7;
+  }
+}
+
+/* =========================
+   Small Mobile (480px)
+   ========================= */
+
+@media (max-width: 480px) {
+  .tw-blackseal-title {
+    font-size: 22px;
+  }
+
+  .tw-blackseal-desc {
+    font-size: 12px;
+  }
+
+  .tw-blackseal-smoke-img {
+    width: 120%;
+    bottom: -40px;
+    filter: blur(4px);
+  }
+}
+/* ==========================================================================
+   Ultra Chroma Section Styles
+   ========================================================================== */
+/* ==========================================================================
+   Ultra Chroma Section Styles
+   ========================================================================== */
+.tw-ultrachroma-section {
+  background: linear-gradient(18.87deg, #303030 -7.7%, #000000 55.92%);
+
+  padding: 100px 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.tw-ultrachroma-container {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+}
+
+/* Header Spacing */
+.tw-ultrachroma-header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  max-width: 850px;
+}
+
+.tw-ultrachroma-title {
+  font-family: "Samsung Sharp Sans", sans-serif;
+  font-size: 38px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.tw-ultrachroma-desc {
+  font-family: "SamsungOne", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 1.6;
+  margin: 0;
+  opacity: 0.85;
+}
+
+/* --- MEDIA WRAPPER CONTAINER --- */
+.tw-ultrachroma-media-container {
+  position: relative; /* Establishes boundary for Ellipse 11 */
+  width: 70%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* --- EXACT FIGMA SPECIFICATIONS FOR ELLIPSE 11 --- */
+.tw-ultrachroma-glow-ellipse {
+  position: absolute;
+  bottom: -41px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 728px;
+  height: 82px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 1, 0.23);
+  filter: blur(54px);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* --- FOREGROUND IMAGE FRAME --- */
+.tw-ultrachroma-image-frame {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+
+.tw-ultrachroma-img {
+  width: 100%;
+  height: 100%;
+}
+
+/* ==========================================================================
+   RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
+
+/* Tablet Scales */
+@media (max-width: 991px) {
+  .tw-ultrachroma-section {
+    padding: 80px 24px;
+  }
+
+  .tw-ultrachroma-title {
+    font-size: 32px;
+  }
+
+  .tw-ultrachroma-desc {
+    font-size: 13px;
+  }
+
+  .tw-ultrachroma-container {
+    gap: 36px;
+  }
+
+  /* Scale the blur and height proportionally on medium viewports */
+  .tw-ultrachroma-glow-ellipse {
+    max-width: 80%;
+    height: 60px;
+    bottom: -30px;
+    filter: blur(40px);
+  }
+}
+
+/* Mobile Scales */
+@media (max-width: 579px) {
+  .tw-ultrachroma-section {
+    padding: 60px 16px;
+  }
+
+  .tw-ultrachroma-title {
+    font-size: 26px;
+  }
+
+  .tw-ultrachroma-desc {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .tw-ultrachroma-image-frame {
+    aspect-ratio: 16 / 11;
+    border-radius: 6px;
+  }
+
+  /* Scale the blur and height proportionally on small mobile viewports */
+  .tw-ultrachroma-glow-ellipse {
+    max-width: 90%;
+    height: 40px;
+    bottom: -20px;
+    filter: blur(24px);
+  }
+}
+/* ==========================================================================
+   AI Upscaling Section Styles
+   ========================================================================== */
+/* ==========================================================================
+   AI Upscaling Section Styles
+   ========================================================================== */
+.tw-upscaling-section {
+  background: linear-gradient(18.87deg, #303030 -7.7%, #000000 66.36%);
+
+  padding: 100px 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.tw-upscaling-container {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+}
+
+/* Header Typography */
+.tw-upscaling-header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  max-width: 850px;
+}
+
+.tw-upscaling-title {
+  font-family: "Samsung Sharp Sans", sans-serif;
+  font-size: 38px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.tw-upscaling-desc {
+  font-family: "SamsungOne", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #cccccc;
+  line-height: 1.6;
+  margin: 0;
+  opacity: 0.85;
+}
+
+/* --- MEDIA WRAPPER CONTAINER --- */
+.tw-upscaling-media-container {
+  position: relative; /* Bounds the absolute ellipse backdrop */
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* --- GLOWING YELLOW BACKDROP ELLIPSE (Mapped from Ellipse 11 specs) --- */
+.tw-upscaling-glow-ellipse {
+  position: absolute;
+  bottom: -40px; /* Pins the glow to bleed from the bottom of the card */
+  width: 75%;
+  height: 140px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(228, 203, 59, 0.45) 0%,
+    rgba(228, 203, 59, 0) 70%
+  );
+  filter: blur(50px);
+  z-index: 1; /* Renders behind the image frame */
+  pointer-events: none;
+}
+
+/* --- THE IMAGE FRAME --- */
+.tw-upscaling-frame {
+  position: relative;
+  z-index: 2; /* Renders in front of the glowing ellipse */
+  width: 100%;
+  aspect-ratio: 16 / 10;
+
+  overflow: hidden;
+}
+
+.tw-upscaling-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ==========================================================================
+   RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
+
+/* Tablet Scales */
+@media (max-width: 991px) {
+  .tw-upscaling-section {
+    padding: 80px 24px;
+  }
+
+  .tw-upscaling-title {
+    font-size: 32px;
+  }
+
+  .tw-upscaling-desc {
+    font-size: 13px;
+  }
+
+  .tw-upscaling-container {
+    gap: 36px;
+  }
+
+  .tw-upscaling-glow-ellipse {
+    height: 100px;
+    bottom: -30px;
+    filter: blur(40px);
+  }
+}
+
+/* Mobile Scales */
+@media (max-width: 579px) {
+  .tw-upscaling-section {
+    padding: 60px 16px;
+  }
+
+  .tw-upscaling-title {
+    font-size: 26px;
+  }
+
+  .tw-upscaling-desc {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .tw-upscaling-frame {
+    aspect-ratio: 16 / 11;
+    border-radius: 6px;
+  }
+
+  .tw-upscaling-glow-ellipse {
+    height: 70px;
+    bottom: -20px;
+    filter: blur(30px);
+  }
+}
+
+/* ==========================================================================
+   Quantum HDR Section Styles
+   ========================================================================== */
+.tw-quantum {
+  text-align: center;
+  color: #ffffff;
+  padding: 100px 24px; /* Spacious top/bottom padding on desktop */
+  width: 100%;
+  box-sizing: border-box;
+  background: linear-gradient(18.87deg, #303030 -7.7%, #000000 54.69%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Targets the h1 inside your title wrapper */
+.tw-quantum-title h1 {
+  font-family: "Samsung Sharp Sans", sans-serif;
+
+  font-size: 38px;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: -0.5px;
+  color: #ffffff;
+}
+
+/* Targets your description wrapper */
+.tw-quantum-desc {
+  max-width: 800px;
+  margin: 20px auto 0;
+  width: 100%;
+}
+
+.tw-quantum-desc p {
+  font-family: "SamsungOne", sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #cccccc;
+  margin: 0;
+  opacity: 0.85;
+}
+
+/* --- THE IMAGE FRAME CONTAINER --- */
+.tw-quantum-image {
+  width: 100%;
+  max-width: 1000px; /* Keeps the TV mockup from stretching too wide on desktop */
+  margin: 48px auto 0 auto;
+  box-sizing: border-box;
+}
+
+/* Ensures your img tag scales smoothly across all screens */
+.tw-quantum-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px; /* Smooth rounded corners matching the visual */
+  border: 1px solid rgba(255, 255, 255, 0.15); /* Thin frame outline */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7); /* Deep shadow overlay */
+}
+
+/* ==========================================================================
+   RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
+
+/* 1. Tablet Portrait & Landscape Scales (580px to 991px) */
+@media (max-width: 991px) {
+  .tw-quantum {
+    padding: 80px 24px;
+  }
+
+  .tw-quantum-title h1 {
+    font-size: 32px;
+  }
+
+  .tw-quantum-desc {
+    max-width: 90%;
+  }
+
+  .tw-quantum-desc p {
+    font-size: 13px;
+  }
+
+  .tw-quantum-image {
+    margin-top: 36px;
+  }
+}
+
+/* 2. Mobile Scales (Below 580px) */
+@media (max-width: 579px) {
+  .tw-quantum {
+    padding: 60px 16px;
+  }
+
+  .tw-quantum-title h1 {
+    font-size: 26px;
+    line-height: 1.25;
+  }
+
+  .tw-quantum-desc {
+    max-width: 100%;
+  }
+
+  .tw-quantum-desc p {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .tw-quantum-image {
+    margin-top: 28px;
+  }
+
+  .tw-quantum-image img {
+    border-radius: 6px;
+  }
+}
